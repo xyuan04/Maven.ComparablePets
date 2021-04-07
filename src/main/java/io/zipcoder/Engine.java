@@ -35,7 +35,7 @@ public class Engine implements Comparator<Pet> {
         }
 
         Pet[] warehouse = convertArraylist();
-        Arrays.sort(warehouse);
+        Arrays.sort(warehouse, this);
 
         for(Pet pet : warehouse) {
             System.out.println(String.format("%s says %s!", pet.getName(), pet.speak()));
@@ -88,6 +88,6 @@ public class Engine implements Comparator<Pet> {
 
     @Override
     public int compare(Pet o1, Pet o2) {
-        return o1.compareTo(o2);
+        return -o2.getType().compareTo(o1.getType());
     }
 }

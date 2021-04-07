@@ -39,6 +39,6 @@ public class Pet implements Comparable<Pet>{
 
     @Override
     public int compareTo(Pet o) {
-        return this.getType().compareTo(o.getType());
+        return this.getName().compareTo(o.getName());
     }
 }
